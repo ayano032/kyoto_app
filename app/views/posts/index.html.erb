@@ -5,6 +5,7 @@
 <% end %>
 
 <h1>投稿一覧</h1>
+<% if @posts.present? %>
 <% @posts.each do |post| %>
 <tr>
 <td>Title:</td>
@@ -31,6 +32,7 @@
     <%= post.favorites.count %> いいね
   <% end %>
 </td>
+<% end %>
 <% end %>
 <% end %>
 </table>
