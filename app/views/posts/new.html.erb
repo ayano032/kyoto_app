@@ -1,0 +1,44 @@
+<%= form_for(@post, url: posts_path) do |f| %>
+<section class="slice sct-color-1">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3 post_image_form">
+            <div class="section-title-wrapper style-1 v1">
+              <h3 class="section-title section-title-sm left">
+                <span>画像投稿フォーム</span>
+              </h3>
+            </div>
+
+            <form class="mt-20">
+              <div class="row">
+                <div class="col-sm-12">
+                  <%= f.attachment_field :image %>
+                </div>
+              </div><br>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group has-icon">
+                    <h4>Title</h4>
+                    <%= f.text_field :title %>
+                     <h4>Body</h4>
+                    <%= f.text_area :caption %>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                </div>
+              </div>
+
+              <hr>
+
+              <button type="submit" class="btn btn-lg btn-block btn-base-1 mt-20">送信</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<% end %>
