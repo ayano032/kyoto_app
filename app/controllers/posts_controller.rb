@@ -17,6 +17,7 @@ class PostsController < ApplicationController
 	@posts = Post.all.search(params[:search])
 	@user = current_user
 	@post.user_id = current_user.id
+	@all_ranks = Post.find(Favorite.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
   end
 
   def show
