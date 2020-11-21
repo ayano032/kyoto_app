@@ -1,7 +1,9 @@
-<h1>投稿編集</h1>
+<h1>投稿詳細</h1>
 <tr>
+<td><%= attachment_image_tag @post, :image, class: "default_image", size: '400x300' %></td>
 <td>Title:</td>
 <td><%= @post.title%></td>
+<br>
 <td>Caption:</td>
 <td><%= @post.caption %>
     <% if @user.id == current_user.id%>

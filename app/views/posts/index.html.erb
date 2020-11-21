@@ -1,39 +1,39 @@
-<table class="table table-striped">
+<div class="main-contents">
   <%= form_tag(posts_path, :method => "get") do %>
  <%= text_field_tag :search %>
 <%= submit_tag "検索" ,:caption => nil ,class: "button is-info"%>
 <% end %>
 
-<h1>投稿一覧</h1>
+<div class="media">
 <% if @posts.present? %>
 <% @posts.each do |post| %>
-<tr>
-<td>Title:</td>
-<td><%= link_to post.title, post_path(post) %></td>
-<td><%= attachment_image_tag post, :image, class: "default_image", size: '100x100' %>
-</td>
-<td>Caption:</td>
-<td><%=post.caption %>
-</td>
-  <td>
+
+<a class="media-left" href="#"><%= attachment_image_tag post, :image, class: "default_image", size: '400x300' %>
+</a>
+<div class="media-body">
+  <h4 class="media-heading">Title:
+<%= link_to post.title, post_path(post) %></h4>
+Caption:
+<%=post.caption %>
+</div>
     <%= link_to "#{post.post_comments.count} コメント", post_path(post.id) %>
-  </td>
+
     <% if post.favorited_by?(current_user) %>
-<td>
+
   <%= link_to post_favorites_path(post), method: :delete  do %>
     <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
     <%= post.favorites.count %> いいね
   <% end %>
-</td>
+
 <% else %>
-<td>
+
   <%= link_to post_favorites_path(post), method: :post  do %>
     <i class="fa fa-heart-o" aria-hidden="true"></i>
     <%= post.favorites.count %> いいね
+   
   <% end %>
-</td>
 <% end %>
 <% end %>
 <% end %>
-</table>
+</div>
 
