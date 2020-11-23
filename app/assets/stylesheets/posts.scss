@@ -2,9 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .main-contents {
-    background: image-url("54053.jpg");
+    background: image-url("64456.jpg");
     background-size: cover;
-    background-color:rgba(255,255,255,0.8);
-    background-blend-mode:lighten;
     padding-left:30px;
+}
+
+.new-post {
+    background: image-url("64456.jpg");
+    background-size: cover;
+    padding-left:30px;
+    padding-top:100px;
+}
+
+.container {
+    padding-bottom:200px;
 }

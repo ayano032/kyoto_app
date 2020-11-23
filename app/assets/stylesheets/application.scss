@@ -24,15 +24,19 @@ li {
 	float:left;
 	}
 .header {
-  background-color:#f7f2b4;
-  height:90px;
+  background: image-url("54093.jpg");
+  height:120px;
 }
 .header-logo {
 	float:left;
-	font-size:36px;
-	padding:20px 40px;
+	font-size:50px;
 	opacity:0.7;
 	letter-spacing: 15px;
+	background: whitesmoke;
+  border-left: double 7px #4ec4d3;
+  border-right: double 7px #4ec4d3;
+  margin-top:20px;
+  margin-left:30px;
 }
 .header-list {
 	float:right;

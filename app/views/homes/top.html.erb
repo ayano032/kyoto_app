@@ -1,30 +1,29 @@
-<div class="main-contents">
-<h1>ランキング</h1>
-
-<%=  @all_ranks.each.with_index(1) do |post, i| %>
- <h2>第<%= i %>位</h2>
-<a class="media-left" href="#"><%= attachment_image_tag post, :image, class: "default_image", size: '400x300' %>
-</a>
-<div class="media-body">
-  <h4 class="media-heading">Title:
-<%= link_to post.title, post_path(post) %></h4>
-Caption:
-<%=post.caption %>
-</div>
+<div class="main">
+　<h1>👑ランキング👑</h1>
+  <%  @all_ranks.each.with_index(1) do |post, i| %>
+　<div>
+　    
+ 　<h2>第<%= i %>位&ensp;&ensp;<%= link_to post.title, post_path(post) %></h2>
+　　<a class="media-left" href="#"><%= attachment_image_tag post, :image, class: "default_image", size: '500x300' %></a>
+　　<h2 class="media-heading">Caption:<%=post.caption %></h2>
+　　　
+　　　
     <%= link_to "#{post.post_comments.count} コメント", post_path(post.id) %>
-
+　
     <% if post.favorited_by?(current_user) %>
 
     <%= link_to post_favorites_path(post), method: :delete  do %>
     <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
     <%= post.favorites.count %> いいね
     <% end %>
-
-
-    <%= link_to post_favorites_path(post), method: :post  do %>
+    
+    <% else %>
+　　<%= link_to post_favorites_path(post), method: :post  do %>
     <i class="fa fa-heart-o" aria-hidden="true"></i>
     <%= post.favorites.count %> いいね
     <% end %> 
-<% end %>
-<% end %>
+    　
+　　<% end %>
+　</div>
+　<% end %>
 </div>
