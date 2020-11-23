@@ -1,11 +1,14 @@
+<div class="post-show">
 <h1>投稿詳細</h1>
 <tr>
 <td><%= attachment_image_tag @post, :image, class: "default_image", size: '400x300' %></td>
+<div class="post-content">
 <td>Title:</td>
 <td><%= @post.title%></td>
 <br>
 <td>Caption:</td>
 <td><%= @post.caption %>
+<br>
     <% if @user.id == current_user.id%>
 <%= link_to "Edit", edit_post_path(@post.id), class: "btn btn-default" %>
 <%= link_to "Destroy", post_path(@post.id), method: :delete, class: "btn btn-danger" %>
@@ -25,7 +28,8 @@
   <% end %>
 </li>
 <% end %>
-<ol>
+<br>
+<div class="comment">
   <% @post.post_comments.each do |post_comment| %>
     <li class="comment">
       <div class="comment-body bb">
@@ -35,23 +39,24 @@
         </div>
         <div class="comment-text">
           <div class="comment-author clearfix">
-            <a href="#" class="link-author"><%=post_comment.user.name %></a>
+          <div class="comment-entry"><%= post_comment.comment %>
+        
             <span class="comment-meta">
               <span class="comment-date"><%= post_comment.created_at.strftime('%Y/%m/%d') %></span>
             </span>
+            <span class="link-author">by<%=post_comment.user.name %></span>
           </div>
-          <div class="comment-entry"><%= post_comment.comment %>
+          
              <% if post_comment.user == current_user %>
-            <div>
               <%= link_to "削除", post_post_comments_path(post_comment.post, post_comment), method: :delete, class: "btn btn-danger pull-right" %>
-            </div>
-          <% end %>
+             <% end %>
           </div>
         </div>
       </div>
     </li>
   <% end %>
-</ol>
+</div>
+</div>
 <%= form_for [@post, @post_comment] do |f| %>
   <div class="row">
     <div class="col-sm-12">
@@ -62,4 +67,4 @@
 <% end %>
 
 </td>
-
+</div>

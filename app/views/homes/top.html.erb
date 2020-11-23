@@ -4,10 +4,10 @@
 　<div>
 　    
  　<h2>第<%= i %>位&ensp;&ensp;<%= link_to post.title, post_path(post) %></h2>
-　　<a class="media-left" href="#"><%= attachment_image_tag post, :image, class: "default_image", size: '500x300' %></a>
+　　<a class="media-left" href="#"><%= attachment_image_tag post, :image, class: "default_image", size: '400x300' %></a>
+　　<div class="media-body">
 　　<h2 class="media-heading">Caption:<%=post.caption %></h2>
-　　　
-　　　
+　　</div>　
     <%= link_to "#{post.post_comments.count} コメント", post_path(post.id) %>
 　
     <% if post.favorited_by?(current_user) %>
