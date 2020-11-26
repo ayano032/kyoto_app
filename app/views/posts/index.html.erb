@@ -4,15 +4,27 @@
 　<%= submit_tag "検索" ,:caption => nil ,class: "button is-info"%>
 　<% end %>
 
-<div class="media">
+
 　<% if @posts.present? %>
 　<% @posts.each do |post| %>
-
-　<a class="media-left" href="#"><%= attachment_image_tag post, :image, class: "default_image", size: '400x300' %></a>
-　<div class="media-body">
-  <h4 class="media-heading">Title:<%= link_to post.title, post_path(post) %></h4>
+  <div class="media">
+	<a class="media-left" href="#">
+		<%= attachment_image_tag post, :image, size: '400x300' %>
+	</a>
+	<div class="media-body">
+		<h4 class="media-heading"><%= attachment_image_tag post.user, :profile_image,fallback: "temple.png", class: "img-circle pull-left profile-thumb", size: '50x50' %>
+  <%=post.user.name %></h4>
+  <br>
+  <br>
+	Title:<%= link_to post.title, post_path(post) %>
+  <br>
+  <br>
   Caption:<%=post.caption %>
-　</div>
+  <br>
+  <br>
+  <%= post.created_at.strftime('%Y/%m/%d') %>
+  <br>
+  <br>
   <%= link_to "#{post.post_comments.count} コメント", post_path(post.id) %>
 
   <% if post.favorited_by?(current_user) %>
@@ -30,6 +42,8 @@
   <% end %>
   
   <% end %>
+	</div>
+  </div>
   <% end %>
   <% end %>
 </div>
