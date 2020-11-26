@@ -9,7 +9,7 @@
 <% @users.each do |user| %>
 <tr>
 <td>
-<%= link_to users_path do %><%= attachment_image_tag @user, :profile_image,fallback: "/no_image.jpg", class: "img-circle pull-left profile-thumb", size: '100x100' %>
+<%= link_to users_path do %><%= attachment_image_tag user, :profile_image,fallback: "temple.png", class: "img-circle pull-left profile-thumb", size: '100x100' %>
 <% end %></td>
 <td><%=user.name %>
 <%= link_to 'Show', user_path(user.id) %>

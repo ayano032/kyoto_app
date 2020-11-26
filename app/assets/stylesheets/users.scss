@@ -1,15 +1,15 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.mypage {
+/*.mypage {
  background: image-url("54129.jpg");
  background-size: cover;
  background-color:rgba(255,255,255,0.8);
  background-blend-mode:lighten;
  padding-left:30px;
  padding-top:20px;
- padding-bottom:110px;
-}
+ padding-bottom:200px;
+}*/
 
 .users {
  background: image-url("54053.jpg");
@@ -28,3 +28,47 @@
  background-blend-mode:lighten;
  padding-left:30px;
 }
+
+.user-show {
+ background: image-url("54129.jpg");
+ background-size: cover;
+ background-color:rgba(255,255,255,0.8);
+ background-blend-mode:lighten;
+ padding-top:30px;
+ padding-left:40px;
+ padding-bottom:200px;
+}
+
+.sign_up {
+ background: image-url("54129.jpg");
+ background-size: cover;
+ background-color:rgba(255,255,255,0.8);
+ background-blend-mode:lighten;
+ padding-top:30px;
+ padding-left:200px;
+ paddig-right:200px;
+ padding-bottom:360px;
+}
+
+.sign_in {
+ background: image-url("54129.jpg");
+ background-size: cover;
+ background-color:rgba(255,255,255,0.8);
+ background-blend-mode:lighten;
+ padding-top:30px;
+ padding-left:200px;
+ paddig-right:200px;
+ padding-bottom:360px;
+}
+
+.conteiner {
+ background: image-url("54053.jpg");
+ background-size: cover;
+ background-color:rgba(255,255,255,0.8);
+ background-blend-mode:lighten;
+ padding-top:30px;
+ padding-left:200px;
+ paddig-right:200px;
+ padding-bottom:500px;
+}
+
