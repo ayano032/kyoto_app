@@ -1,24 +1,28 @@
-# README
+# kyoto_app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+京都の有名観光名所や、おすすめスポットを共有し、交流できるサイト
 
-Things you may want to cover:
+### サイトテーマ
+京都の魅力を多くの人に伝える
 
-* Ruby version
+### テーマを選んだ理由
+実際に、京都に旅行に行ったときに、おすすめスポットを探せるサイトがあれば便利だなと思ったことがきっかけです。
 
-* System dependencies
+### ターゲットユーザ
+20代〜30代
 
-* Configuration
+### 主な利用シーン
+京都に旅行に行く時や、おすすめスポットを共有したい時
 
-* Database creation
+## 設計書
 
-* Database initialization
+### 機能一覧
+https://docs.google.com/spreadsheets/d/1dPIqqg4unpaIOG81d8lzKvxpj4geNiphJ3McLshVyXw/edit#gid=0
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE ： Cloud9
